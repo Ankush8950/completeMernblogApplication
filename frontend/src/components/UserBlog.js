@@ -8,6 +8,9 @@ const UserBlog = () => {
   // console.log(id)
   const getUserBlog = async() =>{
       const res = await axios.get(`/api/user/${id}`)
+      .then((dat)=>{
+        console.log(dat)
+      })
       .catch((err)=>{
         console.log(err)
       })

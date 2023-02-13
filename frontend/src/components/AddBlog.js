@@ -29,7 +29,7 @@ const AddBlog = () => {
     .catch((err)=>{
       console.log(err)
     })
-    // console.log(res)
+    console.log(res)
 
     // const dataApi = await res.data
     // return dataApi

@@ -6,7 +6,7 @@ import axios from "axios";
 import LogOut from "../image/Logout.svg";
 import hamgerger from "../image/Hamberger.svg"
 import close from "../image/close.svg"
-import home from "../image/blog123.jpg"
+// import home from "../image/blog123.jpg"
 
 // import { Link } from "react-scroll";
 
@@ -32,7 +32,7 @@ const Header = () => {
 // console.log(userblogs)
 
 
-const closeMenu = () => setHamberger(false)
+// const closeMenu = () => setHamberger(false)
   return (
     <div className="">
       <nav className="bg-white dark:bg-gray-800  shadow py-2 sm:py-4 ">

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Auth = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [error , setError] = useState(false) 
+  // const [error , setError] = useState(false) 
   const [isSignup, setIsSignup] = useState(false);
   const [userinput, setUserInput] = useState({
     name: "",
@@ -62,9 +62,9 @@ const Auth = () => {
       <h1 className="font-semibold text-xl mb-5">
         {isSignup ? "Sign up" : "Log in"}
       </h1>
-       <p className="text-red-500 text-xs italic">
+       {/* <p className="text-red-500 text-xs italic">
               {error}
-            </p>
+            </p> */}
       <div className="w-full max-w-xs">
         <form
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
