@@ -30,7 +30,6 @@ const Header = () => {
      };
     getUserBlog().then((datas) => setUserBlogs(datas.user));
   }, [id]);
-// console.log(userblogs)
 
 
 // const closeMenu = () => setHamberger(false)
