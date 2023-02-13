@@ -28,7 +28,7 @@ const Header = () => {
        const apidata = await res.data;
        return apidata;
      };
-    getUserBlog().then((data) => setUserBlogs(data.user));
+    getUserBlog().then((datas) => setUserBlogs(datas.user));
   }, [id]);
 // console.log(userblogs)
 
