@@ -18,17 +18,18 @@ const Header = () => {
   const [userblogs, setUserBlogs] = useState();
   const id = localStorage.getItem("userId");
   // console.log(id)
-  const getUserBlog = async () => {
-    const res = await axios.get(`/api/user/${id}`).catch((err) => {
-      console.log(err);
-    });
-    const apidata = await res.data;
-    return apidata;
-  };
+ 
 
   useEffect(() => {
+     const getUserBlog = async () => {
+       const res = await axios.get(`/api/user/${id}`).catch((err) => {
+         console.log(err);
+       });
+       const apidata = await res.data;
+       return apidata;
+     };
     getUserBlog().then((data) => setUserBlogs(data.user));
-  }, []);
+  }, [id]);
 // console.log(userblogs)
 
 

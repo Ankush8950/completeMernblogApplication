@@ -6,21 +6,19 @@ const UserBlog = () => {
    const [userblogs, setUserBlogs] = useState();
   const id = localStorage.getItem("userId")
   // console.log(id)
-  const getUserBlog = async() =>{
+ 
+
+  useEffect(()=>{
+     const getUserBlog = async() =>{
       const res = await axios.get(`/api/user/${id}`)
-      .then((dat)=>{
-        console.log(dat)
-      })
       .catch((err)=>{
         console.log(err)
       })
       const apidata = await res.data
       return apidata
   }
-
-  useEffect(()=>{
     getUserBlog().then((data) => setUserBlogs(data.user))
-  },[userblogs])
+  },[userblogs,id])
   // console.log(userblogs)
   return (
     <div className='flex flex-col items-center justify-center mb-10' id='myblog'>

@@ -19,19 +19,20 @@ const BlogDetails = () => {
     setUserInput(inputData);
   };
 
-  const handleApi = async () => {
-    const res = await axios.get(`/api/blog/${id}`)
-    .catch((err)=>{
-      console.log(err)
-    })
-    const apidata = await res.data
-    return apidata
-  };
-
+  
 
   useEffect(() => {
+    const handleApi = async () => {
+      const res = await axios.get(`/api/blog/${id}`)
+        .catch((err) => {
+          console.log(err)
+        })
+      const apidata = await res.data
+      return apidata
+    };
+
       handleApi().then((data)=>setBlogId(data.blog))
-  }, [id])
+  }, [id])  
   
 
   const updateBlogApi = async()=>{
