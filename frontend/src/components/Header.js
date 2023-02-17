@@ -1,38 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store";
-import axios from "axios";
 import LogOut from "../image/Logout.svg";
 import hamgerger from "../image/Hamberger.svg"
 import close from "../image/close.svg"
-// import home from "../image/blog123.jpg"
 
-// import { Link } from "react-scroll";
 
 const Header = () => {
   const dispatch = useDispatch();
   const [profileToggle, setProfileToggle] = useState(false);
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const [hamgergers, setHamberger] = useState(false)
-  const [userblogs, setUserBlogs] = useState();
-  const id = localStorage.getItem("userId");
-  // console.log(id)
  
 
-  useEffect(() => {
-     const getUserBlog = async () => {
-       const res = await axios.get(`/api/user/${id}`).catch((err) => {
-         console.log(err);
-       });
-       const apidata = await res.data;
-       return apidata;
-     };
-    getUserBlog().then((datas) => setUserBlogs(datas.user));
-  }, [id]);
-
-
-// const closeMenu = () => setHamberger(false)
+ 
   return (
     <div className="">
       <nav className="bg-white dark:bg-gray-800  shadow py-2 sm:py-4 ">
@@ -89,7 +71,7 @@ const Header = () => {
                   {isLoggedIn && (
                     <div className="relative inline-block text-left">
                       <div className="flex items-center">
-                        <h1 className="mr-2">{userblogs.name}</h1>
+                        <h1 className="mr-2">Ankush</h1>
                         <div className="flex border-2 rounded-lg md:rounded-full w-20 md:w-auto">
                         <button
                           type="button"
@@ -98,7 +80,7 @@ const Header = () => {
                           onClick={() => setProfileToggle(!profileToggle)}
                         >
                           <p className="md:w-10 md:h-10  rounded-full pr-3 md:pr-0 border-r-2 md:border-0 text-black flex items-center justify-center">
-                            {userblogs.name.slice(0, 1)}
+                            A
                           </p>
                         </button>
 
@@ -148,8 +130,8 @@ const Header = () => {
                             
                               <span className="flex items-center justify-center">
                                 <span className="flex flex-col ">
-                                <h1 className="font-medium text-sm">Name : {userblogs.name}</h1>
-                                <h1 className="font-medium text-sm"> Email : {userblogs.email}</h1></span>
+                                <h1 className="font-medium text-sm">Name : Ankush</h1>
+                                <h1 className="font-medium text-sm"> Email :ankushku@gmail.com</h1></span>
                               </span>
                             </Link>
 

@@ -4,17 +4,18 @@ import BlogsCard from './BlogsCard'
 
 const Blog = () => {
   const [blogs,setBlogs] = useState();
-  const handleBlogApi = async() => {
-    const res = await axios.get(`/api/blog`)
-    .catch((err)=>{
-      console.log(err)
-    })
-
-    const data =await res.data
-    return data
-  }
+ 
 
   useEffect(()=>{
+    const handleBlogApi = async() => {
+      const res = await axios.get(`/api/blog`)
+      .catch((err)=>{
+        console.log(err)
+      })
+  
+      const data =await res.data
+      return data
+    }
     handleBlogApi().then((data)=>setBlogs(data.blogs))
   }, [blogs])
 
